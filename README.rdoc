@@ -81,7 +81,7 @@ Style/Documentation:
 Metrics/LineLength:
   Enabled: false
 ---
-
+#CloneしたRemote Repositoryから、Commit先のRepositoryに切り替える
 yuji911227:~/workspace (master) $ git remote -v
 origin  https://github.com/DiveintoCode-corp/day13 (fetch)
 origin  https://github.com/DiveintoCode-corp/day13 (push)
