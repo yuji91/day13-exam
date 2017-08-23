@@ -82,6 +82,13 @@ Metrics/LineLength:
   Enabled: false
 ---
 
+yuji911227:~/workspace (master) $ git remote -v
+origin  https://github.com/DiveintoCode-corp/day13 (fetch)
+origin  https://github.com/DiveintoCode-corp/day13 (push)
+
+git remote rm origin
+git remote add origin https://github.com/yuji91/day13-exam.git
+
 
 [Fix]
 add poems_path to routes.rb
