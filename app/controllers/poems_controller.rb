@@ -1,5 +1,5 @@
 class PoemsController < ApplicationController
-  before_action :set_poem, only: [:show, :edit, :destroy]
+  before_action :set_poem, only: %i[show edit destroy update]
 
   # GET /poems
   # GET /poems.json
@@ -9,8 +9,7 @@ class PoemsController < ApplicationController
 
   # GET /poems/1
   # GET /poems/1.json
-  def show
-  end
+  def show; end
 
   # GET /poems/new
   def new
@@ -18,8 +17,7 @@ class PoemsController < ApplicationController
   end
 
   # GET /poems/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /poems
   # POST /poems.json
@@ -62,13 +60,14 @@ class PoemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_poem
-      @poem = Poem.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def poem_params
-      params.require(:poem).permit(:content, :auther)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_poem
+    @poem = Poem.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def poem_params
+    params.require(:poem).permit(:title, :content, :auther)
+  end
 end
