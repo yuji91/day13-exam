@@ -89,7 +89,23 @@ origin  https://github.com/DiveintoCode-corp/day13 (push)
 git remote rm origin
 git remote add origin https://github.com/yuji91/day13-exam.git
 
+#Deploy to Heroku
+-Setup
+heroku login
+heroku create
 
+-Asset PreCompile
+c9 open config/environments/production.rb
+
+config.assets.compile = false
+--> config.assets.compile = true
+
+rake assets:precompile RAILS_ENV=production
+
+c9 open Gemfile
+gem 'rails_12factor', group: :production
+
+bundle install
 [Fix]
 add poems_path to routes.rb
 
