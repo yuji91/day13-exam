@@ -106,6 +106,12 @@ c9 open Gemfile
 gem 'rails_12factor', group: :production
 
 bundle install
+
+git push heroku master
+
+heroku run rake db:migrate RAILS_ENV=production
+heroku config:add SECRET_TOKEN="$(bundle exec rake secret)"
+
 [Fix]
 add poems_path to routes.rb
 
