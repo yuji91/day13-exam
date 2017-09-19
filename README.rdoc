@@ -123,6 +123,26 @@ c9 open db/seeds.rb
 
 heroku run rake db:seed
 
+
+[if use ActiveResource::Base]
+class Poem < ActiveResource::Base
+  self.site = "基礎編１で公開したアプリのHerokuのURL"
+end
+
+c9 open config/application.rb 
+
+require File.expand_path('../boot', __FILE__)
+
+require 'rails/all'
+[add]require 'rubygems'
+[add]require 'active_resource'
+
+上記２つのrequireをapplication.rbに記載しないと、
+rails sしたときに下記エラーが発生する
+uninitialized constant ::ActiveResource
+
+
+
 [Fix]
 add poems_path to routes.rb
 
