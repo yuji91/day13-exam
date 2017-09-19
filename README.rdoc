@@ -81,6 +81,10 @@ Style/Documentation:
 Metrics/LineLength:
   Enabled: false
 ---
+yuji911227:~/workspace (master) $ git init
+yuji911227:~/workspace (master) $ git remote -v
+yuji911227:~/workspace (master) $ git remote add origin https://github.com/yuji91/day13-exam.git
+
 #CloneしたRemote Repositoryから、Commit先のRepositoryに切り替える
 yuji911227:~/workspace (master) $ git remote -v
 origin  https://github.com/DiveintoCode-corp/day13 (fetch)
@@ -111,6 +115,13 @@ git push heroku master
 
 heroku run rake db:migrate RAILS_ENV=production
 heroku config:add SECRET_TOKEN="$(bundle exec rake secret)"
+
+c9 open db/seeds.rb 
+  # coding: utf-8
+  Blog.create(:title => 'title_01', :content => 'content_01')
+  Poem.create(:title => 'title_01', :content => 'content_01', :author => 'author_01')
+
+heroku run rake db:seed
 
 [Fix]
 add poems_path to routes.rb
